@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./view-registration.component.scss']
 })
 export class ViewRegistrationComponent implements OnInit {
-  public bikeReg;
+  public bikeReg: any = {};
 
   constructor(private bikeService: BikeService, private route: ActivatedRoute) { }
 
