@@ -4,6 +4,7 @@ import { AdminComponent } from './components/admin/admin.component'
 import { CallbackComponent } from './components/callback/callback.component';
 import { HomeComponent } from './components/home/home.component';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { 
@@ -12,11 +13,13 @@ const routes: Routes = [
   },
   {
     path: 'admin/view/:id',
-    component: ViewRegistrationComponent
+    component: ViewRegistrationComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'callback',
