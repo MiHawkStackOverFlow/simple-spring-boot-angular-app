@@ -2,6 +2,12 @@
   <h1>
     Globomatics Bike Registry System
   </h1>
+
+  <input type="file" name="FileUpload1" style="padding: 4px;" id="FileUpload1" class="form-control" [(ngModel)]="fileUploaded" (change)="onSelectFile($event)" [ngModelOptions]="{standalone: true}"> 
 </div>
 
-<router-outlet></router-outlet>
+<div style="margin-top: 30px;">
+  <button (click)="download();" [disabled]="!fileUploaded"> Download</button>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
